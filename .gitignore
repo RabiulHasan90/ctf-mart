@@ -1,0 +1,12 @@
+# / - Root Path 
+*.md
+setup.bat
+setup.sh
+
+# /backend - Backend Files
+backend/node_modules
+backend/.env
+
+
+# /frontend - Frontend Files
+frontend/node_modules
