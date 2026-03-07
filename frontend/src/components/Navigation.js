@@ -99,9 +99,15 @@ const Navigation = () => {
 					{/* Desktop User Menu */}
 					<div className="hidden md:flex items-center gap-3 lg:gap-6">
 						<div className="text-right hidden lg:block">
-							<p className="text-sm text-white text-opacity-80">
-								Welcome
-							</p>
+							{user?.role === "admin" ? (
+  <span className="px-3 py-1 text-xs font-semibold text-white bg-red-500 rounded-full">
+    Administrator
+  </span>
+) : (
+  <span className="px-3 py-1 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full">
+    User
+  </span>
+)}
 							<p className="text-lg font-bold">
 								{user?.name || "User"}
 							</p>
