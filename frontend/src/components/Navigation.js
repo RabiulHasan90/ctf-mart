@@ -77,13 +77,33 @@ const Navigation = () => {
 						>
 							Products
 						</Link>
-						<Link
+						<div>
+						{user?.role === "user" ? (
+		<Link
 							to="/orders"
 							className="hover:text-white hover:opacity-80 transition-all duration-300 font-semibold"
 						>
 							My Orders
 						</Link>
-						<Link
+	) : null}
+</div>
+						
+						<div>
+	{user?.role === "user" ? (
+		<Link
+			to="/cart"
+			className="relative hover:text-white hover:opacity-80 transition-all duration-300 font-semibold"
+		>
+			Cart
+			{cart && cart.length > 0 && (
+				<span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold -mr-2 animate-pulse">
+					{cart.length}
+				</span>
+			)}
+		</Link>
+	) : null}
+</div>
+						{/* <Link
 							to="/cart"
 							className="relative hover:text-white hover:opacity-80 transition-all duration-300 font-semibold"
 						>
@@ -93,7 +113,7 @@ const Navigation = () => {
 									{cart.length}
 								</span>
 							)}
-						</Link>
+						</Link> */}
 						{/* <div>
 						{user?.role === 'admin' ? (
 							<Link
