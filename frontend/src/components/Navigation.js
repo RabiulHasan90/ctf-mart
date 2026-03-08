@@ -94,6 +94,20 @@ const Navigation = () => {
 								</span>
 							)}
 						</Link>
+						{/* <div>
+						{user?.role === 'admin' ? (
+							<Link
+							to="/admin"
+							className="hover:text-white hover:opacity-80 transition-all duration-300 font-semibold"
+						>
+							Admin Panel
+						</Link>
+						):
+						(
+							<></>
+						)}
+
+						</div> */}
 					</div>
 
 					{/* Desktop User Menu */}
@@ -114,7 +128,23 @@ const Navigation = () => {
 						</div>
 
 						{/* Balance Display */}
-						<div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg px-3 lg:px-4 py-2 border border-white border-opacity-30 text-center">
+
+						<div>
+							
+								{user?.role === 'admin' ? (
+							<Link
+  to="/admin"
+  className="px-5 py-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
+  text-white font-semibold shadow-md 
+  hover:scale-105 hover:shadow-lg 
+  transition-all duration-300 ease-in-out"
+>
+  Admin Panel
+</Link>
+						):
+						(
+							<>
+								<div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg px-3 lg:px-4 py-2 border border-white border-opacity-30 text-center">
 							<p className="text-xs text-white text-opacity-80">
 								Balance
 							</p>
@@ -125,6 +155,21 @@ const Navigation = () => {
 								${user?.totalBalance?.toFixed(2) || "0.00"}
 							</p>
 						</div>
+							</>
+						)
+							}
+						</div>
+						{/* <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg px-3 lg:px-4 py-2 border border-white border-opacity-30 text-center">
+							<p className="text-xs text-white text-opacity-80">
+								Balance
+							</p>
+							<p
+								className="text-lg lg:text-2xl font-bold"
+								style={{ color: "#fde047" }}
+							>
+								${user?.totalBalance?.toFixed(2) || "0.00"}
+							</p>
+						</div> */}
 
 						<Link
 							to="/profile"

@@ -163,6 +163,7 @@ exports.updateProduct = async (req, res, next) => {
 		res.status(500).json({ success: false, message: error.message });
 	}
 };
+// @desc Add product to cart and reduce stock
 
 // @desc    Delete product
 // @route   DELETE /api/products/:id

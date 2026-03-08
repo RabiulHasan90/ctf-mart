@@ -32,8 +32,9 @@ const Home = () => {
 									onClick={() => navigate("/orders")}
 									className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg transition-colors"
 								>
-									My Orders
+									My Orders 
 								</button>
+							
 							</>
 						) : (
 							<>
